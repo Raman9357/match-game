@@ -7,7 +7,7 @@ function ContestPage() {
             <main style={{ padding: "20px" }}>
                 <p>Match all 10 tiles within 20 seconds to win amazing prizes!</p>
                 <div>
-                    {/* Placeholder for game tiles */}
+                    {/* */}
                     <p>Game Tiles Go Here!</p>
                 </div>
             </main>

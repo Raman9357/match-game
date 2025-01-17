@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 
 function FormPage() {
-    const navigate = useNavigate(); // Initialize the useNavigate hook
+    const navigate = useNavigate();
     const [formData, setFormData] = useState({
         firstName: "",
         lastName: "",
@@ -22,10 +22,7 @@ function FormPage() {
     const handleSubmit = (e) => {
         e.preventDefault();
 
-        // Add validation or API call logic here if needed
         console.log("Form Data Submitted:", formData);
-
-        // Redirect to the next page
         navigate("/contest");
     };
 
