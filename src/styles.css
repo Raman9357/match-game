@@ -1,0 +1,526 @@
+/* NavigationBar.css */
+* {
+    transition: all 0.3s;
+}
+
+.container {
+    width: 100%;
+    max-width: 1200px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.container-col {
+    width: 100%;
+    max-width: 1200px;
+    display: flex;
+    align-items: start;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.nav-bar {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    background-color: #28324A;
+    color: white;
+    padding: 10px 20px;
+}
+
+.nav-bar-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.brand {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: white;
+}
+
+.hamburger {
+    display: none;
+    /* Initially hidden */
+    flex-direction: column;
+    justify-content: space-between;
+    width: 30px;
+    height: 35px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+/* Hamburger line styles */
+.hamburger-line {
+    background-color: white;
+    height: 3px;
+    width: 20px;
+    border-radius: 2px;
+    transition: all 0.3s ease;
+}
+
+/* When the menu is open, transform the lines into a cross */
+.hamburger.open .hamburger-line:nth-child(1) {
+    transform: rotate(45deg);
+    position: relative;
+    top: 8px;
+}
+
+.hamburger.open .hamburger-line:nth-child(2) {
+    opacity: 0;
+}
+
+.hamburger.open .hamburger-line:nth-child(3) {
+    transform: rotate(-45deg);
+    position: relative;
+    top: -4px;
+}
+
+/* Navigation links */
+.nav-links {
+    width: 100%;
+    list-style: none;
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+.nav-links li {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.nav-links li img {
+    width: 100%;
+    max-width: 180px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: white;
+    padding: 8px 12px;
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+}
+
+
+.main-home {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    min-height: 85vh;
+}
+
+.main-home .left {
+    width: 50%;
+
+    padding-right: 1rem;
+}
+
+.main-home .left .main-home-pic img {
+    width: 100%;
+
+    max-width: 626px;
+}
+
+.main-home .left .main-content {
+    margin-top: 1rem;
+}
+
+.main-home .left .main-content p {
+    width: 100%;
+
+    max-width: 500px;
+
+    font-size: 18px;
+}
+
+.main-home .left .win-prizes {
+    margin-top: 2rem;
+}
+
+.main-home .left .win-prizes h2 {
+    text-align: center;
+}
+
+.left .prizes-img {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 1rem;
+}
+
+.left .prizes-img .prize {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 100%;
+    max-width: 180px;
+    height: 100%;
+    max-height: 118px;
+    padding: 1rem;
+
+    text-align: center;
+
+    color: #fff;
+    border-radius: 18px;
+
+    margin: 0 10px;
+}
+
+.green1 {
+    background-color: #4bab489f;
+}
+
+.green2 {
+    background-color: #4bab48dd;
+}
+
+.green3 {
+    background-color: #4CAB48;
+}
+
+.main-home .right {
+    width: 50%;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    flex-direction: column;
+
+    padding-left: 1rem;
+}
+
+.play-to-win {
+    padding: 1rem 3rem;
+    background-color: #28324A;
+    color: #fff;
+    text-decoration: none;
+    font-weight: 400;
+    font-size: 3rem;
+    border-radius: 18px;
+
+    text-align: center;
+}
+
+.play-to-win a {
+    text-decoration: none;
+    color: #fff;
+}
+
+.hide-win {
+    display: none;
+}
+
+.right .buy-more {
+    width: 100%;
+    max-width: 500px;
+    height: 150px;
+    background: url(./assets/img/more-possibilities.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    border-radius: 18px;
+
+    display: flex;
+    align-items: end;
+    justify-content: center;
+
+    margin-top: 1rem;
+}
+
+.right .buy-more p {
+    color: white;
+    font-size: 22px;
+    margin-bottom: 1rem;
+}
+
+.right .three-pics {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    margin-top: 1rem;
+}
+
+.right .three-pics img {
+    width: 100%;
+    padding: 1rem;
+}
+
+footer {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+
+    background-color: #28324A;
+
+    color: #fff;
+
+    line-height: 130%;
+    padding: 15px 10px;
+}
+
+footer .content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+/* footer .first-parra {
+    margin-bottom: 10px;
+} */
+
+/* .nav-links a:hover {
+    background-color: #555;
+} */
+
+.contest-page {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 80vh;
+}
+
+.intstructions {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 2rem;
+
+    /* text-align: left; */
+}
+
+.intstructions h2 {
+    margin-bottom: 1rem;
+}
+
+.intstructions p {
+    margin-bottom: 10px;
+}
+
+.prize-table {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.prize-table table {
+    width: 100%;
+    max-width: 800px;
+}
+
+.prize-table table th {
+    padding: 10px;
+}
+
+.prize-table table td {
+    padding: 10px;
+    text-align: center;
+}
+
+table,
+th,
+td {
+    border: 4px solid #28324A;
+}
+
+table {
+    border-collapse: collapse;
+}
+
+/* .desktop-game {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+} */
+
+.mobile-game {
+    padding: 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.mobile-game .game-link {
+    color: #FF0000;
+    background-color: #28324A;
+    text-decoration: none;
+    font-size: 24px;
+    padding: 1rem 3rem;
+    border-radius: 12px;
+    border: 3px solid #4CAB48;
+}
+
+.mobile-game .game-link:hover {
+    transform: scale(1.08);
+}
+
+@media screen and (max-width: 768px) {
+    .nav-links li img {
+        width: 100%;
+        max-width: 130px;
+    }
+
+    .nav-bar {
+
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        background-color: #28324A;
+        color: white;
+        padding: 10px;
+    }
+
+    footer .content p {
+        font-size: 12px;
+    }
+
+    .intstructions {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        padding: 2rem 10px;
+
+        /* text-align: left; */
+    }
+
+    /* .desktop-game {
+        display: none;
+    }
+
+    .mobile-game {
+        padding: 2rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    } */
+}
+
+@media screen and (max-width: 810px) {
+
+    .prize-table {
+        padding: 1rem;
+    }
+}
+
+
+/* Responsive Design */
+@media screen and (max-width: 768px) {
+
+    /* Display hamburger menu on small screens */
+    /* .hamburger {
+        display: flex;
+    } */
+
+    /* Hide nav-links initially */
+    /* .nav-links {
+        display: none;
+        flex-direction: column;
+        gap: 10px;
+        background-color: #333;
+        padding: 10px;
+        border-radius: 5px;
+    } */
+
+    /* Show nav-links when hamburger is clicked */
+    /* .nav-links.active {
+        display: flex;
+    } */
+}
+
+@media screen and (max-width: 1200px) {
+
+    .main-home .left {
+        width: 50%;
+
+        padding-right: 0rem;
+
+        padding: 1rem;
+    }
+
+    .main-home .right {
+        width: 50%;
+
+        padding-right: 0rem;
+
+        padding: 1rem;
+    }
+
+    .play-to-win {
+        font-size: 2rem;
+    }
+}
+
+@media screen and (max-width: 657px) {
+
+    .col {
+        flex-direction: column;
+    }
+
+    .col .left {
+        width: 100%;
+    }
+
+    .col .right {
+        width: 100%;
+    }
+
+    .hide-win {
+        display: block;
+
+        max-width: 400px;
+
+        margin: 0 auto;
+
+        margin-top: 1rem;
+
+        text-align: center;
+    }
+
+    .hide-right {
+        display: none;
+    }
+
+    .main-home .left .main-home-pic img {
+        padding: 2rem;
+    }
+}
+
+@media screen and (max-width: 400px) {
+
+    .prizes-img {
+        flex-direction: column;
+    }
+
+    .prizes-img .prize {
+        margin: 5px !important;
+    }
+
+    .nav-links li img {
+        width: 100%;
+        max-width: 120px;
+    }
+}

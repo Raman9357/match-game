@@ -5,6 +5,9 @@ import FormPage from "./pages/FormPage";
 import LegalPage from "./pages/LegalPage";
 import ContestPage from "./pages/ContestPage";
 import PrizePage from "./pages/PrizePage";
+import MobileGame from "./pages/mobileGamePage";
+import WinPage from "./pages/win";
+import LosePage from "./pages/lose";
 
 function App() {
   return (
@@ -15,6 +18,9 @@ function App() {
         <Route path="/legal" element={<LegalPage />} />
         <Route path="/contest" element={<ContestPage />} />
         <Route path="/prize" element={<PrizePage />} />
+        <Route path="/mobile-game" element={<MobileGame />} />
+        <Route path="/win" element={<WinPage />} />
+        <Route path="/lose" element={<LosePage />} />
         <Route path="*" element={<Navigate to="/" replace />} />
       </Routes>
     </Router>

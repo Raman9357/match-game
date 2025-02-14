@@ -1,161 +1,74 @@
-import React from "react";
+import React, { useEffect } from "react";
+import { Link } from 'react-router-dom';
 import { useNavigate } from "react-router-dom";
+import Header from "../components/header";
+import Footer from "../components/footer";
+import ContestGame from "../components/game";
+import "../styles.css";
 
 function ContestPage() {
-    const navigate = useNavigate();
-    document.addEventListener('DOMContentLoaded', () => {
-        const cards = document.querySelectorAll('.card');
-        const timerDisplay = document.querySelector('#time');
-        let firstCard, secondCard;
-        let lockBoard = false;
-        let timeLeft = 20;
-        let timerInterval;
-
-        function shuffleCards() {
-            const gameBoard = document.querySelector('.game-board');
-            const shuffledCards = Array.from(cards).sort(() => Math.random() - 0.5);
-            shuffledCards.forEach(card => gameBoard.appendChild(card));
-        }
-
-        function flipCard() {
-            if (lockBoard) return;
-            if (this === firstCard) return;
-
-            this.classList.add('flipped');
-
-            if (!firstCard) {
-                firstCard = this;
-                return;
-            }
-
-            secondCard = this;
-            checkForMatch();
-        }
-
-        function checkForMatch() {
-            const isMatch = firstCard.dataset.pair === secondCard.dataset.pair;
-
-            isMatch ? disableCards() : unflipCards();
-        }
-
-        function disableCards() {
-            firstCard.removeEventListener('click', flipCard);
-            secondCard.removeEventListener('click', flipCard);
-
-            if (document.querySelectorAll('.card:not(.flipped)').length === 0) {
-                clearInterval(timerInterval);
-                // alert('Congratulations! You matched all pairs!');
-                navigate("/prize");
-            }
-
-            resetBoard();
-        }
-
-        function unflipCards() {
-            lockBoard = true;
-
-            setTimeout(() => {
-                firstCard.classList.remove('flipped');
-                secondCard.classList.remove('flipped');
-
-                resetBoard();
-            }, 400);
-        }
-
-        function resetBoard() {
-            [firstCard, secondCard] = [null, null];
-            lockBoard = false;
-        }
-
-        function startTimer() {
-            timerInterval = setInterval(() => {
-                timeLeft--;
-                timerDisplay.textContent = timeLeft;
-
-                if (timeLeft === 0) {
-                    clearInterval(timerInterval);
-                    alert('Game Over! Time is up.');
-                    resetGame();
-                }
-            }, 1000);
-        }
-
-        function resetGame() {
-            cards.forEach(card => card.classList.remove('flipped'));
-            cards.forEach(card => card.addEventListener('click', flipCard));
-            [firstCard, secondCard] = [null, null];
-            lockBoard = false;
-            timeLeft = 20;
-            timerDisplay.textContent = timeLeft;
-            shuffleCards();
-            startTimer();
-        }
-
-        cards.forEach(card => card.addEventListener('click', flipCard));
-        shuffleCards();
-        startTimer();
-    });
 
     return (
-
         <div>
+            <Header />
 
-            <header>Match Game Contest</header>
-            <main style={{ padding: "20px" }}>
-                {/* <p>Match all 10 tiles within 20 seconds to win amazing prizes!</p> */}
-                <div>
-                    {/* */}
-                    {/* <p>Game Tiles Go Here!</p> */}
+            <div>
+                {/* <Header /> */}
+                {/* <header>Match Game Contest</header> */}
+
+                <div className="intstructions">
+                    <div className="container-col">
+                        <h2>Instruction</h2>
+
+                        <p>Match all five pairs in 20 seconds to win! Flip fast, stay sharp, and claim rewards—up to 10,000 BuyMore Dollars! Missed it? Try again in 24 hours. A countdown shows when your next chance begins. Keep flipping for more! </p>
+
+                        <p>Click to read the <a href="#">Terms and Conditions</a> </p>
+                    </div>
                 </div>
 
-                <div class="timer"><span id="time">20</span></div>
+                <div className="prize-table">
+                    <div className="container">
+                        <table>
+                            <tr>
+                                <th>Prize Amounts</th>
+                                <th>Winning</th>
+                            </tr>
+                            <tr>
+                                <td>1</td>
+                                <td>1000</td>
+                            </tr>
+                            <tr>
+                                <td>5</td>
+                                <td>750</td>
+                            </tr>
 
-                <div class="game-board">
-                    <div class="card" data-pair="1">
-                        <div class="front">🐱</div>
-                        <div class="back">❓</div>
-                    </div>
-                    <div class="card" data-pair="1">
-                        <div class="front">🐱</div>
-                        <div class="back">❓</div>
-                    </div>
-                    <div class="card" data-pair="2">
-                        <div class="front">🐶</div>
-                        <div class="back">❓</div>
-                    </div>
-                    <div class="card" data-pair="2">
-                        <div class="front">🐶</div>
-                        <div class="back">❓</div>
-                    </div>
-                    <div class="card" data-pair="3">
-                        <div class="front">🐰</div>
-                        <div class="back">❓</div>
-                    </div>
-                    <div class="card" data-pair="3">
-                        <div class="front">🐰</div>
-                        <div class="back">❓</div>
-                    </div>
-                    <div class="card" data-pair="4">
-                        <div class="front">🦁</div>
-                        <div class="back">❓</div>
-                    </div>
-                    <div class="card" data-pair="4">
-                        <div class="front">🦁</div>
-                        <div class="back">❓</div>
-                    </div>
-                    <div class="card" data-pair="5">
-                        <div class="front">🐼</div>
-                        <div class="back">❓</div>
-                    </div>
-                    <div class="card" data-pair="5">
-                        <div class="front">🐼</div>
-                        <div class="back">❓</div>
+                            <tr>
+                                <td>10</td>
+                                <td>100</td>
+                            </tr>
+
+                            <tr>
+                                <td>100</td>
+                                <td>5</td>
+                            </tr>
+                        </table>
                     </div>
                 </div>
 
 
+                {/* <div className="desktop-game">
+                    <ContestGame />
+                </div> */}
 
-            </main>
+                <div className="mobile-game">
+                    <Link className="game-link" to="/mobile-game">Play Now</Link>
+                </div>
+
+
+                {/* <Footer /> */}
+            </div>
+
+            <Footer />
         </div>
     );
 }
