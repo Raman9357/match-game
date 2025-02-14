@@ -33,7 +33,7 @@ function HomePage() {
                             </div>
 
                             <div className="play-to-win hide-win">
-                                <Link to="/contest"><h4>Play to Win</h4></Link>
+                                <Link to="/form"><h4>Play to Win</h4></Link>
                             </div>
 
                             <div className="win-prizes">
@@ -59,7 +59,7 @@ function HomePage() {
                         <div className="right">
                             <div className="play-to-win hide-right">
                                 {/* <h4>Play to Win</h4> */}
-                                <Link to="/contest"><h4>Play to Win</h4></Link>
+                                <Link to="/form"><h4>Play to Win</h4></Link>
                             </div>
 
                             <div className="buy-more">
