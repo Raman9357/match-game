@@ -1,0 +1,18 @@
+{
+    "firstName": "",
+    "lastName": "",
+    "address": "",
+    "city": "",
+    "province": "",
+    "postalCode": "",
+    "phoneNumber": "",
+    "email": "",
+    "dob": "",
+    "password": "",
+    "confirm": "",
+    "houseMember": "",
+    "income": "",
+    "consentRules": false,
+    "consentCommunications": false
+  }
+  
