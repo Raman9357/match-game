@@ -84,13 +84,16 @@ function SignUp() {
                 <input type="text" name="lastName" value={formData.lastName} onChange={handleChange} className={formErrors.lastName ? "error" : ""} maxLength="45" />
                 {formErrors.lastName && <span className="error-message">{formErrors.lastName}</span>}
                 </label>
-                
-                <label>*Address:
-                <input type="text" name="address" value={formData.address} onChange={handleChange} className={formErrors.address ? "error" : ""} maxLength="50" />
-                {formErrors.address && <span className="error-message">{formErrors.address}</span>}
-                </label>
 
                 <div className="street-unit">
+
+                    <div>
+                        <label>*Address:
+                        <input type="text" name="address" value={formData.address} onChange={handleChange} className={formErrors.address ? "error" : ""} maxLength="50" />
+                        {formErrors.address && <span className="error-message">{formErrors.address}</span>}
+                        </label>
+                    </div>
+
                     <div>
                         <label>Street Number:
                         <input type="text" name="street" value={formData.address} onChange={handleChange} maxLength="10" />

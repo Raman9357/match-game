@@ -27,7 +27,7 @@ form {
 
 h2 {
 	width: 90%;
-	text-align: left;
+	text-align: center;
 	margin: 2rem auto;
 	color: white;
 	text-shadow: #333;
@@ -39,7 +39,7 @@ label {
 	margin-top: 10px;
 	margin-bottom: 35px;
 	text-align: left;
-	font-size: 12px;
+	font-size: 14px;
 }
 
 input[type='text'],
@@ -50,7 +50,7 @@ input[type='confirm'],
 input[type='date'],
 input[type='number'],
 select {
-	width: 95%;
+	width: 100%;
 	padding: 10px;
 	margin-top: 5px;
 	border: 1px solid #ccc;
@@ -108,7 +108,8 @@ span.error {
 	bottom: -20px;
 	left: 0;
 	color: red;
-	font-size: 12px;
+	font-size: 14px;
+	font-weight: bold;
 	white-space: nowrap;
 }
 
