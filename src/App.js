@@ -1,5 +1,6 @@
 import React from "react";
 import { BrowserRouter as Router, Routes, Route, Navigate } from "react-router-dom";
+import FormOptions from "./pages/FormOptions"; // Import the FormOptions component
 import HomePage from "./pages/HomePage";
 import SignUp from "./pages/SignUp";
 import LogIn from "./pages/LogIn";
@@ -14,7 +15,8 @@ function App() {
   return (
     <Router>
       <Routes>
-        <Route path="/" element={<HomePage />} />
+        <Route path="/" element={<FormOptions />} /> {/* Default entry point */}
+        <Route path="/home" element={<HomePage />} />
         <Route path="/signup" element={<SignUp />} />
         <Route path="/login" element={<LogIn />} />
         <Route path="/legal" element={<LegalPage />} />
