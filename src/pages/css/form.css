@@ -8,7 +8,7 @@
 	background-image: url('../../form-background.png');
 }
 
-form {
+.form-container form {
 	background-color: rgba(255, 255, 255, 0.65);
 	border: 2px solid #28324a;
 	border-radius: 10px;
@@ -25,7 +25,7 @@ form {
 	color: #28324a;
 }
 
-h2 {
+.form-container h2 {
 	width: 90%;
 	text-align: center;
 	margin: 2rem auto;
@@ -33,7 +33,7 @@ h2 {
 	text-shadow: #333;
 }
 
-label {
+.form-container label {
 	display: block;
 	position: relative;
 	margin-top: 10px;
@@ -42,14 +42,14 @@ label {
 	font-size: 16px;
 }
 
-input[type='text'],
-input[type='email'],
-input[type='tel'],
-input[type='password'],
-input[type='confirm'],
-input[type='date'],
-input[type='number'],
-select {
+.form-container input[type='text'],
+.form-container input[type='email'],
+.form-container input[type='tel'],
+.form-container input[type='password'],
+.form-container input[type='confirm'],
+.form-container input[type='date'],
+.form-container input[type='number'],
+.form-container select {
 	width: 100%;
 	padding: 10px;
 	margin-top: 5px;
@@ -62,19 +62,19 @@ select {
 	color: #333;
 }
 
-input:focus,
-select:focus {
+.form-container input:focus,
+.form-container select:focus {
 	border-color: #007bff;
 	outline: none;
 }
 
-input:invalid,
-input.error {
+.form-container input:invalid,
+.form-container input.error {
 	border-color: red;
 	background-color: #ffe6e6;
 }
 
-button {
+.form-container button {
 	width: 100%;
 	background-color: #28324a;
 	color: white;
@@ -86,15 +86,15 @@ button {
 	margin-top: 15px;
 }
 
-button:hover {
+.form-container button:hover {
 	background-color: #0f172a;
 }
 
-input[type='checkbox'] {
+.form-container input[type='checkbox'] {
 	margin-right: 10px;
 }
 
-span.error {
+.form-container span.error {
 	position: absolute;
 	left: 0;
 	top: 100%;
@@ -103,7 +103,7 @@ span.error {
 	padding-top: 4px;
 }
 
-.error-message {
+.form-container .error-message {
 	position: absolute;
 	bottom: -20px;
 	left: 0;
@@ -113,33 +113,33 @@ span.error {
 	white-space: nowrap;
 }
 
-.field-full {
+.form-container .field-full {
 	width: 100%;
 }
 
-.field-half {
+.form-container .field-half {
 	width: 50%;
 }
 
-.field-quarter {
+.form-container .field-quarter {
 	width: 25%;
 }
 
-.field-third {
+.form-container .field-third {
 	width: 30%;
 }
 
-input.error+span.error {
+.form-container input.error+span.error {
 	visibility: visible;
 }
 
 @media (max-width: 480px) {
-	form {
+	.form-container form {
 		width: 100%;
 		padding: 15px;
 	}
 
-	label {
+	.form-container label {
 		display: block;
 		position: relative;
 		margin-top: 10px;
@@ -148,7 +148,7 @@ input.error+span.error {
 		text-align: center;
 	}
 
-	.error-message {
+	.form-container .error-message {
 		position: absolute;
 		bottom: -20px;
 		left: 0;
@@ -157,22 +157,22 @@ input.error+span.error {
 		white-space: nowrap;
 	}
 
-	h2 {
+	.form-container h2 {
 		font-size: 1.5rem;
 	}
 
-	input[type='text'],
-	input[type='email'],
-	input[type='tel'],
-	input[type='password'],
-	input[type='confirm'],
-	input[type='date'],
-	select {
+	.form-container input[type='text'],
+	.form-container input[type='email'],
+	.form-container input[type='tel'],
+	.form-container input[type='password'],
+	.form-container input[type='confirm'],
+	.form-container input[type='date'],
+	.form-container select {
 		font-size: 14px;
 		padding: 6px;
 	}
 
-	button {
+	.form-container button {
 		font-size: 14px;
 		padding: 10px;
 	}
