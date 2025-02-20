@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
 import './css/form.css';
+import Header from "../components/header";
+import Footer from "../components/footer";
 
 function LogIn() {
   const [loginData, setLoginData] = useState({ email: "", password: "" });
@@ -47,6 +49,7 @@ function LogIn() {
 
   return (
     <div className="form-container">
+    <Header />
       <h2>Log In</h2>
       <form onSubmit={handleLogin}>
         <label>
@@ -63,6 +66,7 @@ function LogIn() {
 
         <button type="submit" className="submit-button"> Log In </button>
       </form>
+    <Footer />
     </div>
   );
 }

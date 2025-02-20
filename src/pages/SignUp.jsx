@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import './css/form.css';
+import Header from "../components/header";
+import Footer from "../components/footer";
 
 function SignUp() {
     const navigate = useNavigate();
@@ -72,6 +74,7 @@ function SignUp() {
 
     return (
         <div className="form-container">
+            <Header />
             <h2>Sign Up</h2>
             <form onSubmit={handleSubmit}>
                 <label>*First Name:
@@ -213,6 +216,7 @@ function SignUp() {
 
                 <button type="submit">Submit</button>
             </form>
+            <Footer />
         </div>
     );
 }
