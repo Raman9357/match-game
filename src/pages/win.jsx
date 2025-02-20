@@ -21,7 +21,7 @@ function WinPage() {
     };
 
     useEffect(() => {
-        generateEquation(); // Run the function when the component mounts
+        generateEquation();
     }, []);
 
     return (
