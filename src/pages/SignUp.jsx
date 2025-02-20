@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import './css/form.css';
-import { saveAs } from "file-saver";
 
 function SignUp() {
     const navigate = useNavigate();
