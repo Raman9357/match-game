@@ -9,14 +9,14 @@ import "../styles.css";
 function ContestPage() {
 
     return (
-        <div>
+        <div className="view-height">
             <Header />
 
-            <div>
+            <div className="contast-page">
                 {/* <Header /> */}
                 {/* <header>Match Game Contest</header> */}
 
-                <div className="intstructions">
+                {/* <div className="intstructions">
                     <div className="container-col">
                         <h2>Instruction</h2>
 
@@ -53,6 +53,14 @@ function ContestPage() {
                             </tr>
                         </table>
                     </div>
+                </div> */}
+
+                <div className="instruction-list">
+                    <ul>
+                        <li>Flip cards to <span className="hypatia-italic">Match Pairs</span></li>
+                        <li>Don’t let the <span className="hypatia-italic">Timer</span> run out</li>
+                        <li><span className="hypatia-italic">Win</span> Big prizes!</li>
+                    </ul>
                 </div>
 
 
@@ -61,7 +69,7 @@ function ContestPage() {
                 </div> */}
 
                 <div className="mobile-game">
-                    <Link className="game-link" to="/mobile-game">Play Now</Link>
+                    <Link className="game-link hypatia-italic" to="/mobile-game">Start Game!</Link>
                 </div>
 
 

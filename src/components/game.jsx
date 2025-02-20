@@ -59,7 +59,7 @@ function ContestGame() {
 
             if (document.querySelectorAll('.card:not(.flipped)').length === 0) {
                 clearInterval(timerInterval);
-                navigate("/prize");
+                navigate("/win");
             }
 
             resetBoard();
@@ -88,8 +88,9 @@ function ContestGame() {
 
                 if (timeLeft === 0) {
                     clearInterval(timerInterval);
-                    alert('Game Over! Time is up.');
-                    resetGame();
+                    // alert('Game Over! Time is up.');
+                    navigate("/lose");
+                    // resetGame();
                 }
             }, 1000);
         }
@@ -122,14 +123,22 @@ function ContestGame() {
 
     return (
         <div className="contest-page">
-            <div className="container">
+            <div className="container flex-col">
+
+                <div className="instruction-list">
+                    <ul>
+                        <li>Flip cards to <span className="hypatia-italic">Match Pairs</span></li>
+                        <li>Don’t let the <span className="hypatia-italic">Timer</span> run out</li>
+                        <li><span className="hypatia-italic">Win</span> Big prizes!</li>
+                    </ul>
+                </div>
 
                 {/* <main style={{ padding: "20px" }}> */}
                 <main>
 
                     <div className="game-starter">
                         <div className="play">
-                            <button id="play-game">Play</button>
+                            <button className="hypatia-italic" id="play-game">Play</button>
                         </div>
                     </div>
 
