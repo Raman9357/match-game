@@ -4,48 +4,48 @@
 
 .form-container {
 	width: 100%;
+	min-height: 890px;
 	margin: 0 auto;
 }
 
 .form-container form {
-	background-color: rgba(255, 255, 255, 0.65);
+	background-color: rgba(1, 194, 11, 0.8);
 	border: 2px solid #28324a;
-	border-radius: 10px;
+	border-radius: 20px;
 	padding: 20px;
 	width: 600px;
-	min-height: 1000px;
+	min-height: auto;
 	margin: auto;
-	box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+	box-shadow: 4px 4px 15px rgba(0, 0, 0, 0.2);
 	font-family: Arial, sans-serif;
+	color: white;
 	display: flex;
-	flex-direction: row;
-	flex-wrap: wrap;
-	justify-content: space-between;
-	color: #28324a;
+	flex-direction: column;
+	align-items: center;
 }
 
 .form-container h2 {
-	width: 90%;
-	text-align: center;
-	margin: 2rem auto;
-	color: white;
-	text-shadow: #333;
+	width: 100%;
+	text-align: left;
+	color: #ffffff;
+	margin-bottom: 1rem;
 }
 
 .form-container label {
 	display: block;
 	position: relative;
 	margin-top: 10px;
-	margin-bottom: 35px;
+	margin-bottom: 15px;
 	text-align: left;
 	font-size: 16px;
+	color: white;
+	width: 100%;
 }
 
 .form-container input[type='text'],
 .form-container input[type='email'],
 .form-container input[type='tel'],
 .form-container input[type='password'],
-.form-container input[type='confirm'],
 .form-container input[type='date'],
 .form-container input[type='number'],
 .form-container select {
@@ -53,84 +53,152 @@
 	padding: 10px;
 	margin-top: 5px;
 	border: 1px solid #ccc;
-	border-radius: 5px;
+	border-radius: 10px;
 	font-size: 16px;
-	transition: 0.3s;
 	font-family: Arial, sans-serif;
-	background-color: rgba(255, 255, 255, 0.859);
+	background-color: rgba(255, 255, 255, 0.95);
 	color: #333;
+	box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+	transition: all 0.3s ease;
 }
 
 .form-container input:focus,
 .form-container select:focus {
-	border-color: #007bff;
+	border-color: #1c6a00;
 	outline: none;
 }
 
 .form-container input:invalid,
 .form-container input.error {
-	border-color: red;
-	background-color: #ffe6e6;
+	border-color: #ff4c4c;
+	background-color: #ffdddd;
 }
 
 .form-container button {
 	width: 100%;
-	background-color: #28324a;
+	background-color: #0f172a;
 	color: white;
-	font-size: 16px;
-	padding: 10px;
+	font-size: 18px;
+	padding: 12px;
 	border: none;
-	border-radius: 5px;
+	border-radius: 20px;
 	cursor: pointer;
-	margin-top: 15px;
+	margin-top: 20px;
 }
 
 .form-container button:hover {
-	background-color: #0f172a;
+	background-color: #1c6a00;
 }
 
 .form-container input[type='checkbox'] {
 	margin-right: 10px;
 }
 
-.form-container span.error {
-	position: absolute;
-	left: 0;
-	top: 100%;
-	font-size: 12px;
-	white-space: nowrap;
-	padding-top: 4px;
-}
-
 .form-container .error-message {
 	position: absolute;
 	bottom: -20px;
 	left: 0;
-	color: red;
-	font-size: 14px;
+	color: rgb(199, 1, 1);
+	font-size: 13px;
 	font-weight: bold;
 	white-space: nowrap;
 }
 
-.form-container .field-full {
+.city-province-postal,
+.street-unit,
+.dob-phone,
+.house-member {
+	display: flex;
+	gap: 10px;
+}
+
+.city-province-postal input,
+.street-unit input,
+.dob-phone input,
+.house-member input {
 	width: 100%;
 }
 
-.form-container .field-half {
-	width: 50%;
+input[type="date"]::-webkit-calendar-picker-indicator {
+	cursor: pointer;
 }
 
-.form-container .field-quarter {
-	width: 25%;
-}
-
-.form-container .field-third {
-	width: 30%;
-}
-
-.form-container input.error+span.error {
-	visibility: visible;
-}
+.form-wrapper {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+  }
+  
+  .login-container {
+	display: flex;
+	width: 60%;
+	max-width: 800px;
+	background: white;
+	border-radius: 16px;
+	overflow: hidden;
+	box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .login-form-section {
+	flex: 1;
+	padding: 2rem;
+	background-color: #2d3e50;
+	color: white;
+  }
+  
+  h2 {
+	font-size: 1.5rem;
+	margin-bottom: 1rem;
+  }
+  
+  label {
+	display: block;
+	margin-bottom: 1rem;
+	font-size: 0.9rem;
+  }
+  
+  input {
+	width: 100%;
+	padding: 0.5rem;
+	border: none;
+	border-radius: 5px;
+	margin-top: 0.3rem;
+  }
+  
+  .error-message {
+	color: red;
+	font-size: 0.8rem;
+  }
+  
+  .submit-button {
+	width: 100%;
+	padding: 0.75rem;
+	background-color: #28a745;
+	color: white;
+	border: none;
+	border-radius: 5px;
+	cursor: pointer;
+  }
+  
+  .signup-section {
+	flex: 1;
+	padding: 2rem;
+	background-color: rgba(1, 194, 11, 0.8);
+	color: white;
+	text-align: center;
+  }
+  
+  .signup-button {
+	margin-top: 1rem;
+	padding: 0.75rem;
+	background-color: #0f172a;
+	color: white;
+	border: none;
+	border-radius: 5px;
+	cursor: pointer;
+  }
+  
 
 @media (max-width: 480px) {
 	.form-container form {

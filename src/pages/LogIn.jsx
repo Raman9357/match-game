@@ -13,16 +13,6 @@ function LogIn() {
     setLoginData({ ...loginData, [name]: value });
   };
 
-  const handleFileChange = (e) => {
-    const file = e.target.files[0];
-    const reader = new FileReader();
-    reader.onload = (e) => {
-      const data = JSON.parse(e.target.result);
-      setUsers([data]);
-    };
-    reader.readAsText(file);
-  };
-
   const handleLogin = (e) => {
     e.preventDefault();
     const errors = {};
@@ -38,7 +28,9 @@ function LogIn() {
     setFormErrors(errors);
 
     if (Object.keys(errors).length === 0) {
-      const user = users.find(user => user.email === loginData.email && user.password === loginData.password);
+      const user = users.find(
+        (user) => user.email === loginData.email && user.password === loginData.password
+      );
       if (user) {
         alert("Login successful");
       } else {
@@ -48,25 +40,50 @@ function LogIn() {
   };
 
   return (
-    <div className="form-container">
-    <Header />
-      <h2>Log In</h2>
-      <form onSubmit={handleLogin}>
-        <label>
-          *Email:
-          <input type="email" name="email" placeholder="Email" value={loginData.email} onChange={handleChange} className={formErrors.email ? "error" : ""} />
-          {formErrors.email && <span className="error-message">{formErrors.email}</span>}
-        </label>
+    <div className="form-wrapper">
+      <Header />
+      <div className="login-container">
+        <div className="login-form-section">
+          <form onSubmit={handleLogin}>
+            <h2>Login to your account</h2>
+            <label>
+              *Email
+              <input
+                type="email"
+                name="email"
+                placeholder="Type Your Email Address"
+                value={loginData.email}
+                onChange={handleChange}
+                className={formErrors.email ? "error" : ""}
+                maxLength="25"
+              />
+              {formErrors.email && <span className="error-message">{formErrors.email}</span>}
+            </label>
 
-        <label>
-          *Password:
-          <input type="password" name="password" placeholder="Password" value={loginData.password} onChange={handleChange} className={formErrors.password ? "error" : ""} />
-          {formErrors.password && <span className="error-message">{formErrors.password}</span>}
-        </label>
+            <label>
+              *Password
+              <input
+                type="password"
+                name="password"
+                placeholder="Type Your Password"
+                value={loginData.password}
+                onChange={handleChange}
+                className={formErrors.password ? "error" : ""}
+                maxLength="25"
+              />
+              {formErrors.password && <span className="error-message">{formErrors.password}</span>}
+            </label>
 
-        <button type="submit" className="submit-button"> Log In </button>
-      </form>
-    <Footer />
+            <button type="submit" className="submit-button">Login</button>
+          </form>
+        </div>
+        <div className="signup-section">
+          <h2>New Here?</h2>
+          <p>Create an account to unlock new possibilities!</p>
+          <button className="signup-button">Sign Up</button>
+        </div>
+      </div>
+      <Footer />
     </div>
   );
 }

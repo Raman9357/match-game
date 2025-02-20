@@ -9,7 +9,8 @@ function SignUp() {
     const [formData, setFormData] = useState({
         firstName: '',
         lastName: '',
-        address: '',
+        housenumber: '',
+        streetname: '',
         city: '',
         province: '',
         postalCode: '',
@@ -39,7 +40,8 @@ function SignUp() {
         const errors = {};
         if (!formData.firstName) errors.firstName = "*First Name is required.";
         if (!formData.lastName) errors.lastName = "*Last Name is required.";
-        if (!formData.address) errors.address = "*Address is required.";
+        if (!formData.housenumber) errors.housenumber = "*House# is Required.";
+        if (!formData.streetname) errors.streetname = "*Street Name is Required.";
         if (!formData.city) errors.city = "*City is required.";
         if (!formData.province) errors.province = "*Province is required.";
         if (!formData.postalCode) errors.postalCode = "*Postal Code is required.";
@@ -49,7 +51,7 @@ function SignUp() {
         if (!formData.confirm) errors.confirm = "*Confirm Your Password.";
         if (!formData.dob) errors.dob = "*Date of Birth is required.";
         if (!formData.houseMember) errors.houseMember = "*HM's Name is Required.";
-        if (!formData.income) errors.income = "*Insert Income.";
+        if (!formData.income) errors.income = "*Insert Gross Income.";
         if (!formData.consentRules) errors.consentRules = "*You must consent to the rules before proceeding.";
         if (!formData.consentCommunications) errors.consentCommunications = "*You must consent to communications before proceeding.";
 
@@ -68,15 +70,15 @@ function SignUp() {
         if (Object.keys(errors).length > 0) {
             setFormErrors(errors);
         } else {
-            navigate("/contest");
+            navigate("/");
         }
     };
 
     return (
         <div className="form-container">
             <Header />
-            <h2>Sign Up</h2>
             <form onSubmit={handleSubmit}>
+                <h2>Sign Up</h2>
                 <label>*First Name:
                     <input type="text" name="firstName" value={formData.firstName} onChange={handleChange} className={formErrors.firstName ? "error" : ""} maxLength="45" />
                     {formErrors.firstName && <span className="error-message">{formErrors.firstName}</span>}
@@ -90,21 +92,22 @@ function SignUp() {
                 <div className="street-unit">
 
                     <div>
-                        <label>*Address:
-                            <input type="text" name="address" value={formData.address} onChange={handleChange} className={formErrors.address ? "error" : ""} maxLength="50" />
-                            {formErrors.address && <span className="error-message">{formErrors.address}</span>}
+                        <label>*House #:
+                            <input type="text" name="housenumber" value={formData.housenumber} onChange={handleChange} className={formErrors.housenumber ? "error" : ""} maxLength="3" />
+                            {formErrors.housenumber && <span className="error-message">{formErrors.housenumber}</span>}
                         </label>
                     </div>
 
                     <div>
-                        <label>Street Number:
-                            <input type="text" name="street" value={formData.address} onChange={handleChange} maxLength="10" />
+                        <label>Street Name:
+                        <input type="text" name="streetname" value={formData.streetname} onChange={handleChange} className={formErrors.streetname ? "error" : ""} maxLength="2" />
+                        {formErrors.streetname && <span className="error-message">{formErrors.streetname}</span>}
                         </label>
                     </div>
 
                     <div>
-                        <label>Apartment, Suite, Unit:
-                            <input type="text" name="apartment" value={formData.address} onChange={handleChange} maxLength="3" />
+                        <label>Apartment/Unit:
+                            <input type="text" name="apartment" onChange={handleChange} maxLength="2" />
                         </label>
                     </div>
                 </div>
@@ -177,7 +180,7 @@ function SignUp() {
                     </div>
 
                     <div>
-                        <label>*HM's Income:
+                        <label>*Gross Income:
                             <select
                                 name="income"
                                 value={formData.income}
@@ -208,7 +211,7 @@ function SignUp() {
 
                 <label>
                     <input type="checkbox" name="consentCommunications" checked={formData.consentCommunications} onChange={handleChange} />
-                    *I consent to receiving communications regarding
+                    *I consent to receiving communications regarding BuyMore Dollar Products and Sponsors
                     {formErrors.consentCommunications && <span className="error-message">{formErrors.consentCommunications}</span>}
                 </label>
 
