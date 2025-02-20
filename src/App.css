@@ -85,7 +85,7 @@ main {
 }
 
 .card .back {
-  background-color: #52be2b;
+  background-color: #ffffff;
   color: white;
 }
 
@@ -138,10 +138,12 @@ main {
 }
 
 .game-starter .play button {
-  background-color: #28324A;
-  border: 4px solid #52be2b;
-  color: #FF0000;
+  background-color: #08CF2B;
+  border: 4px solid #ffffff;
+  color: #ffffff;
   padding: 10px 3rem;
+
+  max-width: 250px;
 
   border-radius: 16px;
   font-size: 32px;

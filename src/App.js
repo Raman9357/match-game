@@ -15,8 +15,8 @@ function App() {
   return (
     <Router>
       <Routes>
-        <Route path="/" element={<FormOptions />} /> {/* Default entry point */}
-        <Route path="/home" element={<HomePage />} />
+        <Route path="/w" element={<FormOptions />} /> {/* Default entry point */}
+        <Route path="/" element={<HomePage />} />
         <Route path="/signup" element={<SignUp />} />
         <Route path="/login" element={<LogIn />} />
         <Route path="/legal" element={<LegalPage />} />
