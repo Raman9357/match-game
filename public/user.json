@@ -1,18 +1,20 @@
 {
-    "firstName": "",
-    "lastName": "",
-    "address": "",
-    "city": "",
-    "province": "",
-    "postalCode": "",
-    "phoneNumber": "",
-    "email": "",
-    "dob": "",
-    "password": "",
-    "confirm": "",
-    "houseMember": "",
-    "income": "",
-    "consentRules": false,
-    "consentCommunications": false
-  }
-  
+  "firstName": "",
+  "lastName": "",
+  "address": "",
+  "housenumber": "",
+  "streetname": "",
+  "city": "",
+  "province": "",
+  "postalCode": "",
+  "phoneNumber": "",
+  "email": "",
+  "dob": "",
+  "password": "",
+  "confirm": "",
+  "adults": "",
+  "children": "",
+  "income": "",
+  "consentRules": false,
+  "consentCommunications": false
+}

@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import './css/form.css';
 import Header from "../components/header";
 import Footer from "../components/footer";
@@ -7,6 +8,7 @@ function LogIn() {
   const [loginData, setLoginData] = useState({ email: "", password: "" });
   const [formErrors, setFormErrors] = useState({});
   const [users, setUsers] = useState([]);
+  const navigate = useNavigate();
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -33,6 +35,7 @@ function LogIn() {
       );
       if (user) {
         alert("Login successful");
+        navigate('/homepage');
       } else {
         alert("Invalid email or password");
       }
@@ -55,7 +58,7 @@ function LogIn() {
                 value={loginData.email}
                 onChange={handleChange}
                 className={formErrors.email ? "error" : ""}
-                maxLength="25"
+                maxLength="70"
               />
               {formErrors.email && <span className="error-message">{formErrors.email}</span>}
             </label>
@@ -80,7 +83,7 @@ function LogIn() {
         <div className="signup-section">
           <h2>New Here?</h2>
           <p>Create an account to unlock new possibilities!</p>
-          <button className="signup-button">Sign Up</button>
+          <button className="signup-button" onClick={() => navigate('/signup')}>Sign Up</button>
         </div>
       </div>
       <Footer />

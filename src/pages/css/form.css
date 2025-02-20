@@ -9,13 +9,14 @@
 }
 
 .form-container form {
-	background-color: rgba(1, 194, 11, 0.8);
+	background-color: rgba(1, 194, 11, 0.719);
 	border: 2px solid #28324a;
 	border-radius: 20px;
 	padding: 20px;
 	width: 600px;
 	min-height: auto;
 	margin: auto;
+	margin-top: 3rem;
 	box-shadow: 4px 4px 15px rgba(0, 0, 0, 0.2);
 	font-family: Arial, sans-serif;
 	color: white;
@@ -131,6 +132,8 @@ input[type="date"]::-webkit-calendar-picker-indicator {
   }
   
   .login-container {
+	margin-top: 15rem;
+	margin-bottom: 14rem;
 	display: flex;
 	width: 60%;
 	max-width: 800px;
@@ -184,7 +187,7 @@ input[type="date"]::-webkit-calendar-picker-indicator {
   .signup-section {
 	flex: 1;
 	padding: 2rem;
-	background-color: rgba(1, 194, 11, 0.8);
+	background-color: rgba(1, 194, 11, 0.719);
 	color: white;
 	text-align: center;
   }

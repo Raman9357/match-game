@@ -45,12 +45,13 @@ function SignUp() {
         if (!formData.city) errors.city = "*City is required.";
         if (!formData.province) errors.province = "*Province is required.";
         if (!formData.postalCode) errors.postalCode = "*Postal Code is required.";
+        if (!formData.dob) errors.dob = "*Date of Birth is required.";
         if (!formData.phoneNumber) errors.phoneNumber = "*Phone Number is required.";
         if (!formData.email) errors.email = "*Email is required.";
         if (!formData.password) errors.password = "*Insert Your Password.";
         if (!formData.confirm) errors.confirm = "*Confirm Your Password.";
-        if (!formData.dob) errors.dob = "*Date of Birth is required.";
-        if (!formData.houseMember) errors.houseMember = "*HM's Name is Required.";
+        if (!formData.adults) errors.adults = "*Number Must be Whole.";
+        if (!formData.children) errors.children = "*Number Must be Whole.";
         if (!formData.income) errors.income = "*Insert Gross Income.";
         if (!formData.consentRules) errors.consentRules = "*You must consent to the rules before proceeding.";
         if (!formData.consentCommunications) errors.consentCommunications = "*You must consent to communications before proceeding.";
@@ -70,9 +71,15 @@ function SignUp() {
         if (Object.keys(errors).length > 0) {
             setFormErrors(errors);
         } else {
-            navigate("/");
+            const updatedUser = {
+                ...formData,
+                address: `${formData.housenumber} ${formData.streetname}`
+            };
+            navigate("/homepage");
         }
     };
+    
+    
 
     return (
         <div className="form-container">
@@ -173,39 +180,40 @@ function SignUp() {
 
                 <div className="house-member">
                     <div>
-                        <label>*House Member's Name:
-                            <input type="text" name="houseMember" value={formData.houseMember} onChange={handleChange} className={formErrors.houseMember ? "error" : ""} maxLength="10" />
-                            {formErrors.houseMember && <span className="error-message">{formErrors.houseMember}</span>}
+                        <label>*Adults in Household:
+                            <input type="number" name="adults" value={formData.adults} onChange={handleChange} className={formErrors.adults ? "error" : ""} />
+                            {formErrors.adults && <span className="error-message">{formErrors.adults}</span>}
+                        </label>
+                    </div>
+
+                    <div>
+                        <label>*Minors in Household:
+                            <input type="number" name="children" value={formData.children} onChange={handleChange} className={formErrors.children ? "error" : ""} />
+                            {formErrors.children && <span className="error-message">{formErrors.children}</span>}
                         </label>
                     </div>
 
                     <div>
                         <label>*Gross Income:
-                            <select
-                                name="income"
-                                value={formData.income}
-                                onChange={handleChange}
-                                className={formErrors.income ? "error" : ""}
-                            >
-                                <option value="">Select</option>
-                                {["Below $20,000", "$20,000-$39,999", "$40,000-$59,999", "$60,000-$79,999", "$80,000-$99,999", "$100,000-$149,999", "$150,000-$199,999", "Above $200,000"]
-                                    .map((income) => (
-                                        <option key={income} value={income}>{income}</option>
-                                    ))}
-                            </select>
+                            <input 
+                                type="number" 
+                                name="income" 
+                                value={formData.income} 
+                                onChange={handleChange} 
+                                className={formErrors.income ? "error" : ""} 
+                                min="0" 
+                                step="1000" 
+                                placeholder="Enter your income"
+                            />
                             {formErrors.income && <span className="error-message">{formErrors.income}</span>}
                         </label>
                     </div>
-                </div>
 
-                <button
-                    type="submit" onClick={handleSubmit} className="submit-button" >
-                    Confirm Income
-                </button>
+                </div>
 
                 <label>
                     <input type="checkbox" name="consentRules" checked={formData.consentRules} onChange={handleChange} />
-                    *I consent to the rules and regulations.
+                    *I consent to the Rules and Regulations.
                     {formErrors.consentRules && <span className="error-message">{formErrors.consentRules}</span>}
                 </label>
 
