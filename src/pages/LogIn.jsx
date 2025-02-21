@@ -7,7 +7,6 @@ import Footer from "../components/footer";
 function LogIn() {
   const [loginData, setLoginData] = useState({ email: "", password: "" });
   const [formErrors, setFormErrors] = useState({});
-  const [users, setUsers] = useState([]);
   const navigate = useNavigate();
 
   const handleChange = (e) => {
@@ -30,15 +29,7 @@ function LogIn() {
     setFormErrors(errors);
 
     if (Object.keys(errors).length === 0) {
-      const user = users.find(
-        (user) => user.email === loginData.email && user.password === loginData.password
-      );
-      if (user) {
-        alert("Login successful");
-        navigate('/homepage');
-      } else {
-        alert("Invalid email or password");
-      }
+      navigate('/homepage');
     }
   };
 
