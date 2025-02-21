@@ -26,6 +26,18 @@
 
 }
 
+.prize-info {
+
+    background: linear-gradient(100.21deg, #0F478E 3.33%, #19131F 111.21%);
+    border-radius: 10px;
+    padding: 1rem;
+
+    margin-top: 1rem;
+    text-align: center;
+    color: #fff;
+
+}
+
 .play-again {
     background: linear-gradient(100.21deg, #0F478E 3.33%, #19131F 111.21%);
     border-radius: 10px;
@@ -52,6 +64,16 @@
     padding: 0 2rem;
 }
 
+.prize-info h3 {
+    font-size: 2rem;
+
+    padding: 0 2rem;
+
+    font-family: "PT Serif";
+    font-weight: 400;
+    font-style: normal;
+}
+
 .win-pic img {
     width: 100%;
     max-width: 450px;
@@ -69,13 +91,14 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    background: linear-gradient(90deg, #1C3257 29.5%, #274D7B 100%);
+    border-radius: 6px;
+    padding: 1rem 1rem;
 }
 
 .question .left p {
 
-    background: linear-gradient(90deg, #1C3257 29.5%, #274D7B 100%);
-    border-radius: 6px;
-    padding: 1rem 2rem;
+
     font-size: 1.5rem;
     color: #fff;
 }
@@ -84,6 +107,7 @@
     max-width: 80px;
     margin: 0 !important;
     margin-left: 1rem !important;
+    font-size: 18px;
 }
 
 .question .right button {
@@ -93,7 +117,13 @@
 
     background: #08CF2B;
     border: 6px solid #FCFDFD;
-    border-radius: 10px;
+    border-radius: 25px;
+
+    color: #fff;
+
+    padding: 10px 1.5rem;
+
+    font-size: 25px;
 }
 
 .play-again h2 {
@@ -239,6 +269,12 @@
 
     .lose-info h3 {
         font-size: 1.5rem;
+
+        padding: 0 1rem;
+    }
+
+    .prize-info h3 {
+        font-size: 1rem;
 
         padding: 0 1rem;
     }
