@@ -31,8 +31,13 @@ function HomePage() {
                                 <p>Log in, match cards in record time, and claim your chance to win big. Whether you're a first-time player or back for another round, the excitement never stops. Are you ready to unlock a world of rewards?</p> */}
                             </div>
 
-                            <div className="play-to-win hide-win">
+                            {/* <div className="play-to-win hide-win">
                                 <Link to="/contest"><h4 className="hypatia-italic" >Play Now!</h4></Link>
+                            </div> */}
+
+                            <div className="box margin-no">
+                                {/* <h4>Play to Win</h4> */}
+                                <Link to="/contest"><h4 className="content-btn hypatia-italic">Play Now!</h4></Link>
                             </div>
 
                             <div className="win-prizes">
@@ -56,7 +61,7 @@ function HomePage() {
                         </div>
 
                         <div className="right">
-                            <div className="box">
+                            <div className="box btn-show">
                                 {/* <h4>Play to Win</h4> */}
                                 <Link to="/contest"><h4 className="content-btn hypatia-italic">Play Now!</h4></Link>
                             </div>
