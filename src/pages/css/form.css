@@ -33,10 +33,11 @@
 }
 
 .form-container label {
+	font-weight: bold;
 	display: block;
 	position: relative;
 	margin-top: 10px;
-	margin-bottom: 15px;
+	margin-bottom: 25px;
 	text-align: left;
 	font-size: 16px;
 	color: white;
@@ -52,7 +53,7 @@
 .form-container select {
 	width: 100%;
 	padding: 10px;
-	margin-top: 5px;
+	margin-top: 4px;
 	border: 1px solid #ccc;
 	border-radius: 10px;
 	font-size: 16px;
@@ -105,14 +106,16 @@
 	white-space: nowrap;
 }
 
+.first-last-name,
 .city-province-postal,
 .street-unit,
 .dob-phone,
 .house-member {
 	display: flex;
-	gap: 10px;
+	gap: 25px;
 }
 
+.first-last-name,
 .city-province-postal input,
 .street-unit input,
 .dob-phone input,
