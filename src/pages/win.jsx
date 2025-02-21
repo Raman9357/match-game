@@ -9,6 +9,8 @@ function WinPage() {
     const [correctAnswer, setCorrectAnswer] = useState(null);
     const [userAnswer, setUserAnswer] = useState("");
     const [isCorrect, setIsCorrect] = useState(false);
+    const [isInCorrect, setIsInCorrect] = useState(false);
+    const [playerWon, setPlayerWon] = useState(false);
 
     const generateEquation = () => {
         let A = Math.floor(Math.random() * 10) + 1;
@@ -19,11 +21,12 @@ function WinPage() {
 
         C = Math.floor(C / D) * D;
 
-        let answer = (A * B) + (C / D) - E;
+        let answer = (A * B) + (C / D) + E;
 
-        setEquation(`(${A} × ${B}) + (${C} ÷ ${D}) - ${E} =`);
+        setEquation(`(${A} × ${B}) + (${C} ÷ ${D}) + ${E} =`);
         setCorrectAnswer(answer);
         setIsCorrect(false);
+        setIsInCorrect(false);
         setUserAnswer("");
     };
 
@@ -34,8 +37,11 @@ function WinPage() {
     const handleSubmit = () => {
         if (parseInt(userAnswer) === correctAnswer) {
             setIsCorrect(true);
+            setIsInCorrect(false);
+            setPlayerWon(true);
         } else {
             setIsCorrect(false);
+            setIsInCorrect(true);
         }
     };
 
@@ -70,12 +76,19 @@ function WinPage() {
                     </div>
                 </div>
 
-                {isCorrect && (
+                {(isCorrect || isInCorrect) && (
                     <div className="prize-info">
-                        <h3><span className="hypatia-italic green">Correct! 🎉</span> <br />
-                            Please check your email about your prize!</h3>
+                        <h3>
+                            <span className={`hypatia-italic ${isCorrect ? "green" : "red"}`}>
+                                {isCorrect ? "Correct! 🎉" : "Wrong answer! Try again, you can do it"}
+                            </span>
+                            <br />
+                            {isCorrect ? "Please check your email about your prize!" : "Prize is waiting for you!"}
+                        </h3>
                     </div>
                 )}
+
+
             </div>
 
             <Footer />
