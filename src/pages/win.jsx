@@ -12,6 +12,8 @@ function WinPage() {
     const [isInCorrect, setIsInCorrect] = useState(false);
     const [playerWon, setPlayerWon] = useState(false);
 
+    const question = document.querySelector(".question");
+
     const generateEquation = () => {
         let A = Math.floor(Math.random() * 10) + 1;
         let B = Math.floor(Math.random() * 5) + 1;
@@ -39,6 +41,8 @@ function WinPage() {
             setIsCorrect(true);
             setIsInCorrect(false);
             setPlayerWon(true);
+
+            question.style.display = "none";
         } else {
             setIsCorrect(false);
             setIsInCorrect(true);
