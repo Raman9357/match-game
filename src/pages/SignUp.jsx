@@ -134,10 +134,13 @@ function SignUp() {
                                     className={`house-number-input ${formErrors.housenumber ? "error" : ""}`} 
                                     placeholder="123" 
                                     maxLength="3" 
+                                    pattern="\d+" 
+                                    title="Only numbers are allowed."
                                 />
                                 {formErrors.housenumber && <span className="error-message">{formErrors.housenumber}</span>}
                             </label>
                         </div>
+
         
                         <div className="street-name-container">
                             <label className="street-name-label">Street Name:
@@ -163,25 +166,30 @@ function SignUp() {
                                     className="apartment-input" 
                                     placeholder="#25" 
                                     maxLength="2" 
+                                    pattern="\d+" 
+                                    title="Only numbers are allowed."
                                 />
                             </label>
                         </div>
+
                     </div>
         
                     <div className="city-province-postal">
                         <div className="city-container">
-                            <label className="city-label">*City:
-                                <input 
-                                    type="text" 
-                                    name="city" 
-                                    value={formData.city} 
-                                    onChange={handleChange} 
-                                    className={`city-input ${formErrors.city ? "error" : ""}`} 
-                                    placeholder="Toronto" 
-                                    maxLength="25" 
-                                />
-                                {formErrors.city && <span className="error-message">{formErrors.city}</span>}
-                            </label>
+                        <label className="city-label">*City:
+                            <input 
+                                type="text" 
+                                name="city" 
+                                value={formData.city} 
+                                onChange={handleChange} 
+                                className={`city-input ${formErrors.city ? "error" : ""}`} 
+                                placeholder="Toronto" 
+                                maxLength="25" 
+                                pattern="[A-Za-z]+" 
+                                title="Only letters are allowed."
+                            />
+                            {formErrors.city && <span className="error-message">{formErrors.city}</span>}
+                        </label>
                         </div>
         
                         <div className="province-container">
@@ -332,7 +340,7 @@ function SignUp() {
 
                 <label>
                     <input type="checkbox" name="consentRules" checked={formData.consentRules} onChange={handleChange} />
-                    *I consent to the Rules and Regulations.
+                    *I consent to the <a>Rules and Regulations.</a>
                     {formErrors.consentRules && <span className="error-message">{formErrors.consentRules}</span>}
                 </label>
 
