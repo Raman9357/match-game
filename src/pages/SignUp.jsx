@@ -6,6 +6,7 @@ import Footer from "../components/footer";
 
 function SignUp() {
     const navigate = useNavigate();
+    const [showModal, setShowModal] = useState(false);
     const [formData, setFormData] = useState({
         firstName: '',
         lastName: '',
@@ -64,6 +65,9 @@ function SignUp() {
 
         return errors;
     };
+
+    const toggleModal = () => setShowModal(!showModal); 
+
 
     const handleSubmit = (e) => {
         e.preventDefault();
@@ -340,11 +344,54 @@ function SignUp() {
                 </div>
 
 
-                <label>
-                    <input type="checkbox" name="consentRules" checked={formData.consentRules} onChange={handleChange} />
-                    *I consent to the <a>Rules and Regulations.</a>
-                    {formErrors.consentRules && <span className="error-message">{formErrors.consentRules}</span>}
-                </label>
+                <div>
+                    <label>
+                        <input
+                        type="checkbox"
+                        name="consentRules"
+                        checked={formData.consentRules}
+                        onChange={handleChange}
+                        />
+                        *I consent to the <a href="#" onClick={toggleModal}>Rules and Regulations.</a>
+                        {formErrors.consentRules && (
+                        <span className="error-message">{formErrors.consentRules}</span>
+                        )}
+                    </label>
+
+                    {}
+                    {showModal && (
+                        <div className="modal">
+                        <div className="modal-content">
+                            <h2>Rules and Regulations</h2>
+                            <p>1. Introduction</p>
+                            <p>
+                            Welcome to the BuyMore Dollars Match Game Contest ("Contest").
+                            By participating in this Contest, you agree to these Terms and
+                            Conditions ("Terms"). Please read these Terms carefully before
+                            entering. If you do not agree to these Terms, you may not
+                            participate in the Contest.
+                            </p>
+                            <p>
+                            The Contest is organized by BuyMore Dollars Inc. ("Organizer"),
+                            a company registered in Canada. For inquiries related to this
+                            Contest, please contact customersupport@buymoredollars.com.
+                            </p>
+                            <p>2. Eligibility</p>
+                            <p>
+                            2.1 Participation Requirements: The Contest is open to legal
+                            residents of Canada aged 16 to 20 years ("Entrants"). Entrants
+                            under 18 years of age must obtain parental or guardian consent
+                            to participate in compliance with the Age of Majority laws in
+                            their province or territory except Quebec.
+                            </p>
+                            <p>2.2 Exclusions: Employees, officers, directors, agents, and representatives of BuyMore Dollars Inc., including their immediate family members and household members, are not eligible to participate.</p>
+                            <button onClick={toggleModal}>Close</button>
+                        </div>
+                        </div>
+                    )}
+                </div>
+
+                
 
                 <label>
                     <input type="checkbox" name="consentCommunications" checked={formData.consentCommunications} onChange={handleChange} />
