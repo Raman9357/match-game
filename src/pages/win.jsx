@@ -49,6 +49,10 @@ function WinPage() {
                     </div>
                 </div>
 
+                <div className="win-info">
+                    <h3 className="hypatia-italic" >Correct! 🎉 <br />Please check your email about your prize!</h3>
+                </div>
+
             </div>
 
             <Footer />

@@ -57,9 +57,9 @@ function HomePage() {
                         </div>
 
                         <div className="right">
-                            <div className="play-to-win hide-right">
+                            <div className="box">
                                 {/* <h4>Play to Win</h4> */}
-                                <Link to="/contest"><h4 className="hypatia-italic">Play Now!</h4></Link>
+                                <Link to="/contest"><h4 className="content-btn hypatia-italic">Play Now!</h4></Link>
                             </div>
 
                             {/* <div className="buy-more">

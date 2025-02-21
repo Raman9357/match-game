@@ -85,8 +85,13 @@ main {
 }
 
 .card .back {
-  background-color: #ffffff;
+  background-color: #8A33B9;
   color: white;
+}
+
+.card .back img {
+  width: 100%;
+  max-width: 70px;
 }
 
 .card.flipped .front {
