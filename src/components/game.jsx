@@ -14,6 +14,8 @@ function ContestGame() {
         // let timeLeft = 20;
         let timerInterval;
 
+        let playerLose = false;
+
         const panel = document.querySelector(".game-starter");
         const playButton = document.querySelector("#play-game");
 
@@ -30,20 +32,7 @@ function ContestGame() {
         let totalTime = timeLeft;
         let startTime;
 
-        function updateTimer() {
-            let elapsed = (Date.now() - startTime) / 1000;
-            let remaining = Math.max(totalTime - elapsed, 0);
 
-            timerText.textContent = Math.ceil(remaining);
-            let angle = (remaining / totalTime) * 360;
-            pie.style.background = `conic-gradient(#FF0000 ${angle}deg, #FF9999 0deg)`;
-
-            if (remaining > 0) {
-                requestAnimationFrame(updateTimer);
-            } else {
-                navigate("/lose");
-            }
-        }
 
         function playTheGame() {
             panel.style.display = "none";
@@ -85,10 +74,26 @@ function ContestGame() {
 
             if (document.querySelectorAll('.card:not(.flipped)').length === 0) {
                 clearInterval(timerInterval);
+                playerLose = false;
                 navigate("/win");
             }
 
             resetBoard();
+        }
+
+        function updateTimer() {
+            let elapsed = (Date.now() - startTime) / 1000;
+            let remaining = Math.max(totalTime - elapsed, 0);
+
+            timerText.textContent = Math.ceil(remaining);
+            let angle = (remaining / totalTime) * 360;
+            pie.style.background = `conic-gradient(#FF0000 ${angle}deg, #FF9999 0deg)`;
+
+            if (remaining > 0) {
+                requestAnimationFrame(updateTimer);
+            } else if (playerLose == true) {
+                navigate("/lose");
+            }
         }
 
         function unflipCards() {
