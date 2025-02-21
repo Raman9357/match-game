@@ -4,7 +4,7 @@
 
 .form-container {
 	width: 100%;
-	min-height: 890px;
+	min-height: 1000px;
 	margin: 0 auto;
 }
 
@@ -56,14 +56,67 @@
 	width: 100%;
 }
 
+a {
+	text-decoration: none;
+	color: rgb(41, 41, 41);
+}
+
+.modal {
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	background-color: rgba(0, 0, 0, 0.5); 
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	z-index: 1000;
+	line-height: 30px;
+	font-weight: bold;
+  }
+  
+  .modal-content {
+	background-color: #3c67c9;
+	padding: 20px;
+	max-width: 600px;
+	width: 100%;
+	border-radius: 8px;
+	text-align: left;
+  }
+  
+  button {
+	margin-top: 10px;
+	padding: 10px;
+	background-color: #28a745;
+	color: white;
+	border: none;
+	border-radius: 5px;
+	cursor: pointer;
+  }
+  
+
 .form-container input[type='text'],
 .form-container input[type='email'],
 .form-container input[type='tel'],
 .form-container input[type='password'],
 .form-container input[type='date'],
-.form-container input[type='number'],
 .form-container select {
 	width: 100%;
+	padding: 10px;
+	margin-top: 4px;
+	border: 1px solid #ccc;
+	border-radius: 10px;
+	font-size: 16px;
+	font-family: Arial, sans-serif;
+	background-color: rgba(255, 255, 255, 0.95);
+	color: #333;
+	box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+	transition: all 0.3s ease;
+}
+
+.form-container input[type='number'] {
+	width: 39%;
 	padding: 10px;
 	margin-top: 4px;
 	border: 1px solid #ccc;
@@ -106,6 +159,8 @@
 
 .form-container input[type='checkbox'] {
 	margin-right: 10px;
+	width: 20px;
+	height: 20px;
 }
 
 .form-container .error-message {
@@ -121,8 +176,7 @@
 .first-last-name,
 .city-province-postal,
 .street-unit,
-.dob-phone,
-.house-member {
+.dob-phone {
 	display: flex;
 	gap: 25px;
 }
@@ -131,6 +185,15 @@
 .city-province-postal input,
 .street-unit input,
 .dob-phone input,
+.house-member input {
+	width: 100%;
+}
+
+.house-member {
+	display: flex;
+	gap: 1px;
+}
+
 .house-member input {
 	width: 100%;
 }
@@ -147,12 +210,11 @@ input[type="date"]::-webkit-calendar-picker-indicator {
   }
   
   .login-container {
-	margin-top: 15rem;
+	margin-top: 4rem;
 	margin-bottom: 14rem;
 	display: flex;
 	width: 60%;
 	max-width: 800px;
-	background: white;
 	border-radius: 16px;
 	overflow: hidden;
 	box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
@@ -173,6 +235,8 @@ input[type="date"]::-webkit-calendar-picker-indicator {
 
   .login-form-section input[type='password'], 
   .login-form-section input[type='email'] {
+	border: 2px solid white;
+	border-radius: 5px;
 	background-color: #2d3e50;
 	color: white;
   }
@@ -248,10 +312,34 @@ input[type="date"]::-webkit-calendar-picker-indicator {
   
 
 @media (max-width: 480px) {
-	.form-container form {
-		width: 100%;
-		padding: 15px;
-	}
+
+	.login-container {
+        width: 100%;
+        margin-top: 2rem;
+        margin-bottom: 5rem;
+    }
+
+    .login-form-section,
+    .signup-section {
+        padding: 0.5rem;
+    }
+
+    .login-form-section h2,
+    .signup-section h2 {
+        font-size: 1.2rem;
+        padding: 1rem;
+    }
+
+    .submit-button,
+    .signup-button {
+        padding: 1rem;
+        font-size: 1rem;
+    }
+
+    .signup-button {
+        padding-left: 5rem;
+        padding-right: 5rem;
+    }
 
 	.form-container label {
 		display: block;
