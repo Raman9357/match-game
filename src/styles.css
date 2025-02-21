@@ -12,6 +12,18 @@
     min-height: 100vh;
 }
 
+.sky-blue {
+    color: #4AAAD3 !important;
+}
+
+.red {
+    color: #FF0000 !important;
+}
+
+.green {
+    color: #4CAB48 !important;
+}
+
 .hypatia-normal {
     font-family: "hypatia-sans-pro", sans-serif;
     font-weight: 400;
@@ -517,6 +529,70 @@ table {
 
 .mobile-game .game-link:hover {
     transform: scale(1.08);
+}
+
+.box {
+    width: 300px;
+    height: 100px;
+    position: relative;
+    border-radius: 40px;
+    overflow: hidden;
+
+    margin: 13vh 0;
+}
+
+.box::before {
+    content: "";
+    position: absolute;
+    top: -10px;
+    left: -10px;
+    right: -10px;
+    bottom: -10px;
+    /* background: linear-gradient(45deg,red, orange, yellow, green, cyan, blue, purple, red); */
+    background: linear-gradient(45deg, purple, rgb(20, 51, 153), rgb(0, 157, 255), purple);
+    background-size: 400% 400%;
+    z-index: -1;
+    animation: wave 2s linear infinite;
+}
+
+.box::after {
+    content: "";
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    right: 10px;
+    bottom: 10px;
+    background-color: #08CF2B;
+    border-radius: 29px;
+    z-index: 1;
+}
+
+@keyframes wave {
+    0% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+.content-btn {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    font-size: 40px;
+
+    width: 100%;
+    text-align: center;
+
+    z-index: 2;
 }
 
 .contast-page {

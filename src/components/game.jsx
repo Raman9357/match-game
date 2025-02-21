@@ -127,9 +127,9 @@ function ContestGame() {
 
                 <div className="instruction-list">
                     <ul>
-                        <li>Flip cards to <span className="hypatia-italic">Match Pairs</span></li>
-                        <li>Don’t let the <span className="hypatia-italic">Timer</span> run out</li>
-                        <li><span className="hypatia-italic">Win</span> Big prizes!</li>
+                        <li>Flip cards to <span className="hypatia-italic sky-blue">Match Pairs</span></li>
+                        <li>Don’t let the <span className="hypatia-italic red">Timer</span> run out</li>
+                        <li><span className="hypatia-italic green">Win</span> Big prizes!</li>
                     </ul>
                 </div>
 
@@ -149,43 +149,43 @@ function ContestGame() {
                     <div className="game-board">
                         <div className="card" data-pair="1">
                             <div className="front">🐱</div>
-                            <div className="back">❓</div>
+                            <div className="back"><img src={require('../assets/img/cart-logo.png')} alt="" /></div>
                         </div>
                         <div className="card" data-pair="1">
                             <div className="front">🐱</div>
-                            <div className="back">❓</div>
+                            <div className="back"><img src={require('../assets/img/cart-logo.png')} alt="" /></div>
                         </div>
                         <div className="card" data-pair="2">
                             <div className="front">🐶</div>
-                            <div className="back">❓</div>
+                            <div className="back"><img src={require('../assets/img/cart-logo.png')} alt="" /></div>
                         </div>
                         <div className="card" data-pair="2">
                             <div className="front">🐶</div>
-                            <div className="back">❓</div>
+                            <div className="back"><img src={require('../assets/img/cart-logo.png')} alt="" /></div>
                         </div>
                         <div className="card" data-pair="3">
                             <div className="front">🐰</div>
-                            <div className="back">❓</div>
+                            <div className="back"><img src={require('../assets/img/cart-logo.png')} alt="" /></div>
                         </div>
                         <div className="card" data-pair="3">
                             <div className="front">🐰</div>
-                            <div className="back">❓</div>
+                            <div className="back"><img src={require('../assets/img/cart-logo.png')} alt="" /></div>
                         </div>
                         <div className="card" data-pair="4">
                             <div className="front">🦁</div>
-                            <div className="back">❓</div>
+                            <div className="back"><img src={require('../assets/img/cart-logo.png')} alt="" /></div>
                         </div>
                         <div className="card" data-pair="4">
                             <div className="front">🦁</div>
-                            <div className="back">❓</div>
+                            <div className="back"><img src={require('../assets/img/cart-logo.png')} alt="" /></div>
                         </div>
                         <div className="card" data-pair="5">
                             <div className="front">🐼</div>
-                            <div className="back">❓</div>
+                            <div className="back"><img src={require('../assets/img/cart-logo.png')} alt="" /></div>
                         </div>
                         <div className="card" data-pair="5">
                             <div className="front">🐼</div>
-                            <div className="back">❓</div>
+                            <div className="back"><img src={require('../assets/img/cart-logo.png')} alt="" /></div>
                         </div>
                     </div>
                 </main>
