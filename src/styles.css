@@ -3,6 +3,10 @@
     transition: all 0.3s;
 }
 
+/* #root {
+    min-height: 100vh;
+} */
+
 .padding-sm {
     padding: 1rem;
 }
@@ -448,6 +452,8 @@ footer .content {
     align-items: center;
     justify-content: center;
     min-height: 80vh;
+
+    padding: 1rem 10px;
 }
 
 .intstructions {
@@ -541,6 +547,24 @@ table {
     margin: 13vh 0;
 }
 
+.margin-no {
+    width: 250px;
+    height: 80px;
+    margin: 1vh auto;
+
+    display: none;
+}
+
+.btn-show {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.btn-show:hover {
+    transform: scale(1.2);
+}
+
 .box::before {
     content: "";
     position: absolute;
@@ -555,6 +579,13 @@ table {
     animation: wave 2s linear infinite;
 }
 
+.margin-no::before {
+    top: -5px;
+    left: -5px;
+    right: -5px;
+    bottom: -5px;
+}
+
 .box::after {
     content: "";
     position: absolute;
@@ -565,6 +596,14 @@ table {
     background-color: #08CF2B;
     border-radius: 29px;
     z-index: 1;
+}
+
+.margin-no::after {
+    top: 5px;
+    left: 5px;
+    right: 5px;
+    bottom: 5px;
+    border-radius: 35px;
 }
 
 @keyframes wave {
@@ -590,7 +629,15 @@ table {
     font-size: 40px;
 
     width: 100%;
+    height: 100%;
     text-align: center;
+
+    line-height: 250%;
+
+    /* display: flex;
+    align-content: center;
+    align-items: center;
+    justify-content: center; */
 
     z-index: 2;
 }
@@ -607,6 +654,8 @@ table {
 .instruction-list {
     width: 100%;
     max-width: 1200px;
+
+    margin-top: 1.5rem;
 
 }
 
@@ -758,6 +807,14 @@ table {
     .contest-page {
         padding: 1rem 10px;
     }
+
+    .margin-no {
+        display: block;
+    }
+
+    .btn-show {
+        display: none;
+    }
 }
 
 @media screen and (max-width: 400px) {
@@ -789,4 +846,123 @@ table {
     }
 
 
+}
+
+.timer-container {
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    position: relative;
+    width: 120px;
+    height: 120px;
+
+    background: rgba(255, 255, 255, 0.6);
+    border-radius: 24px;
+}
+
+.pie {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    background: conic-gradient(#FF0000 360deg, #FF9999 360deg);
+    transition: background 0.1s linear;
+}
+
+.center-cover {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 75px;
+    height: 75px;
+    background-color: #FF9999;
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.timer-clock {
+    position: absolute;
+
+    top: -40%;
+
+    right: -25%;
+
+    z-index: 2;
+}
+
+@media screen and (max-width: 973px) {
+
+    .timer-clock {
+        position: absolute;
+
+        top: -40%;
+
+        right: 5%;
+
+        z-index: 2;
+    }
+}
+
+@media screen and (max-width: 600px) {
+
+    .timer-clock {
+        position: absolute;
+
+        top: -20%;
+
+        right: -75%;
+
+        z-index: 2;
+    }
+}
+
+@media screen and (max-width: 525px) {
+
+    .timer-clock {
+        position: absolute;
+
+        top: -10%;
+
+        right: -45%;
+
+        z-index: 2;
+    }
+
+    .timer-container {
+        width: 60px;
+        height: 60px;
+    }
+
+    .pie {
+        width: 50px;
+        height: 50px;
+    }
+
+    .center-cover {
+        width: 45px;
+        height: 45px;
+    }
+
+    main {
+        margin-top: 2.5rem;
+    }
+}
+
+@media screen and (max-width: 400px) {
+
+    .timer-clock {
+        position: absolute;
+
+        top: -11%;
+
+        right: -25%;
+
+        z-index: 2;
+    }
 }

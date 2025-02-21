@@ -8,10 +8,10 @@ function ContestGame() {
 
     useEffect(() => {
         const cards = document.querySelectorAll('.card');
-        const timerDisplay = document.querySelector('#time');
+        // const timerDisplay = document.querySelector('#time');
         let firstCard, secondCard;
         let lockBoard = false;
-        let timeLeft = 20;
+        // let timeLeft = 20;
         let timerInterval;
 
         const panel = document.querySelector(".game-starter");
@@ -21,9 +21,35 @@ function ContestGame() {
             playButton.addEventListener("click", playTheGame);
         }
 
+        const timerText = document.getElementById("timer-text");
+        const pie = document.getElementById("pie");
+
+        if (!timerText || !pie) return;
+
+        let timeLeft = 20;
+        let totalTime = timeLeft;
+        let startTime;
+
+        function updateTimer() {
+            let elapsed = (Date.now() - startTime) / 1000;
+            let remaining = Math.max(totalTime - elapsed, 0);
+
+            timerText.textContent = Math.ceil(remaining);
+            let angle = (remaining / totalTime) * 360;
+            pie.style.background = `conic-gradient(#FF0000 ${angle}deg, #FF9999 0deg)`;
+
+            if (remaining > 0) {
+                requestAnimationFrame(updateTimer);
+            } else {
+                navigate("/lose");
+            }
+        }
+
         function playTheGame() {
             panel.style.display = "none";
-            startTimer();
+            startTime = Date.now();
+            // startTimer();
+            updateTimer();
         }
 
         function shuffleCards() {
@@ -81,19 +107,19 @@ function ContestGame() {
             lockBoard = false;
         }
 
-        function startTimer() {
-            timerInterval = setInterval(() => {
-                timeLeft--;
-                timerDisplay.textContent = timeLeft;
+        // function startTimer() {
+        //     timerInterval = setInterval(() => {
+        //         timeLeft--;
+        //         timerDisplay.textContent = timeLeft;
 
-                if (timeLeft === 0) {
-                    clearInterval(timerInterval);
-                    // alert('Game Over! Time is up.');
-                    navigate("/lose");
-                    // resetGame();
-                }
-            }, 1000);
-        }
+        //         if (timeLeft === 0) {
+        //             clearInterval(timerInterval);
+        //             // alert('Game Over! Time is up.');
+        //             navigate("/lose");
+        //             // resetGame();
+        //         }
+        //     }, 1000);
+        // }
 
         function resetGame() {
             cards.forEach(card => card.classList.remove('flipped'));
@@ -101,9 +127,9 @@ function ContestGame() {
             [firstCard, secondCard] = [null, null];
             lockBoard = false;
             timeLeft = 20;
-            timerDisplay.textContent = timeLeft;
+            // timerDisplay.textContent = timeLeft;
             shuffleCards();
-            startTimer();
+            // startTimer();
         }
 
         cards.forEach(card => card.addEventListener('click', flipCard));
@@ -133,6 +159,8 @@ function ContestGame() {
                     </ul>
                 </div>
 
+
+
                 {/* <main style={{ padding: "20px" }}> */}
                 <main>
 
@@ -142,11 +170,19 @@ function ContestGame() {
                         </div>
                     </div>
 
-                    <div className="timer">
+                    {/* <div className="timer">
                         <span id="time">20</span>
-                    </div>
+                    </div> */}
 
                     <div className="game-board">
+
+                        <div className="timer-clock">
+                            <div class="timer-container">
+                                <div class="pie" id="pie"></div>
+                                <div class="center-cover" id="timer-text">20</div>
+                            </div>
+                        </div>
+
                         <div className="card" data-pair="1">
                             <div className="front">🐱</div>
                             <div className="back"><img src={require('../assets/img/cart-logo.png')} alt="" /></div>
