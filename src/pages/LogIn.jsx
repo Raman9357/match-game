@@ -29,7 +29,7 @@ function LogIn() {
     setFormErrors(errors);
 
     if (Object.keys(errors).length === 0) {
-      navigate('/homepage');
+      navigate('/contest');
     }
   };
 

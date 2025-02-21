@@ -37,7 +37,7 @@ function HomePage() {
 
                             <div className="box margin-no">
                                 {/* <h4>Play to Win</h4> */}
-                                <Link to="/contest"><h4 className="content-btn hypatia-italic">Play Now!</h4></Link>
+                                <Link to="/login"><h4 className="content-btn hypatia-italic">Play Now!</h4></Link>
                             </div>
 
                             <div className="win-prizes">
@@ -63,7 +63,7 @@ function HomePage() {
                         <div className="right">
                             <div className="box btn-show">
                                 {/* <h4>Play to Win</h4> */}
-                                <Link to="/contest"><h4 className="content-btn hypatia-italic">Play Now!</h4></Link>
+                                <Link to="/login"><h4 className="content-btn hypatia-italic">Play Now!</h4></Link>
                             </div>
 
                             {/* <div className="buy-more">
