@@ -79,7 +79,7 @@ function SignUp() {
                 ...formData,
                 address: `${formData.housenumber} ${formData.streetname}`
             };
-            navigate("/login");
+            navigate("/contest");
         }
     };
     
