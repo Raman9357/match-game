@@ -297,7 +297,7 @@ function SignUp() {
         
                     <div className="house-member">
                         <div className="adults-container">
-                            <label className="adults-label">*Adults in Household:
+                            <label className="adults-label">*# of Adults:
                                 <input 
                                     type="number" 
                                     name="adults" 
@@ -305,13 +305,14 @@ function SignUp() {
                                     onChange={handleChange} 
                                     className={`adults-input ${formErrors.adults ? "error" : ""}`} 
                                     min="0" 
+                                    maxLength="20"
                                 />
                                 {formErrors.adults && <span className="error-message">{formErrors.adults}</span>}
                             </label>
                         </div>
         
                         <div className="children-container">
-                            <label className="children-label">*Minors in Household:
+                            <label className="children-label">*$ of Minors:
                                 <input 
                                     type="number" 
                                     name="children" 
@@ -319,6 +320,7 @@ function SignUp() {
                                     onChange={handleChange} 
                                     className={`children-input ${formErrors.children ? "error" : ""}`} 
                                     min="0" 
+                                    maxLength="20"
                                 />
                                 {formErrors.children && <span className="error-message">{formErrors.children}</span>}
                             </label>
@@ -345,7 +347,7 @@ function SignUp() {
 
 
                 <div>
-                    <label>
+                    <label className="checkboxes">
                         <input
                         type="checkbox"
                         name="consentRules"
@@ -404,7 +406,7 @@ function SignUp() {
                 <button type="submit">Submit</button>
             </form>
             <Footer />
-        </div>
+            </div>
     );
 }
 
