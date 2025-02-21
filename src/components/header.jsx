@@ -13,7 +13,7 @@ const Header = () => {
             <div className="container">
                 <ul className={`nav-links`}>
                     {/* <li><Link to="/home"><img src="../assets/img/site-logo.png" alt="" /></Link></li> */}
-                    <li><Link to="/home"><img src={require('../assets/svg/new-logo.png')} /></Link></li>
+                    <li><Link to="/homepage"><img src={require('../assets/svg/new-logo.png')} /></Link></li>
                     {/* <li><Link to="/contest">Play to win</Link></li> */}
                 </ul>
             </div>
