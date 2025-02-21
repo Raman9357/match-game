@@ -176,7 +176,8 @@ a {
 .first-last-name,
 .city-province-postal,
 .street-unit,
-.dob-phone {
+.dob-phone,
+.house-member {
 	display: flex;
 	gap: 25px;
 }
@@ -187,12 +188,7 @@ a {
 .dob-phone input,
 .house-member input {
 	width: 100%;
-}
-
-.house-member {
-	display: flex;
-	gap: 1px;
-}
+};
 
 .house-member input {
 	width: 100%;
@@ -249,7 +245,7 @@ input[type="date"]::-webkit-calendar-picker-indicator {
   label {
 	display: block;
 	margin-bottom: 1rem;
-	font-size: 0.9rem;
+	font-size: 14px;
   }
   
   input {
@@ -312,6 +308,12 @@ input[type="date"]::-webkit-calendar-picker-indicator {
   
 
 @media (max-width: 480px) {
+
+	.form-container form {
+		width: 85%;
+		min-height: 1000px;
+		margin-top: 3rem;
+	}
 
 	.login-container {
         width: 100%;
