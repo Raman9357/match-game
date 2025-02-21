@@ -33,10 +33,23 @@
 }
 
 .form-container label {
+	font-weight: bold;
 	display: block;
 	position: relative;
 	margin-top: 10px;
-	margin-bottom: 15px;
+	margin-bottom: 25px;
+	text-align: left;
+	font-size: 16px;
+	color: white;
+	width: 100%;
+}
+
+.login-form-section label {
+	font-weight: bold;
+	display: block;
+	position: relative;
+	margin-top: 10px;
+	margin-bottom: 60px;
 	text-align: left;
 	font-size: 16px;
 	color: white;
@@ -52,7 +65,7 @@
 .form-container select {
 	width: 100%;
 	padding: 10px;
-	margin-top: 5px;
+	margin-top: 4px;
 	border: 1px solid #ccc;
 	border-radius: 10px;
 	font-size: 16px;
@@ -77,7 +90,7 @@
 
 .form-container button {
 	width: 100%;
-	background-color: #0f172a;
+	background-color: #2C5475;
 	color: white;
 	font-size: 18px;
 	padding: 12px;
@@ -88,7 +101,7 @@
 }
 
 .form-container button:hover {
-	background-color: #1c6a00;
+	background-color: #377cb3;
 }
 
 .form-container input[type='checkbox'] {
@@ -105,14 +118,16 @@
 	white-space: nowrap;
 }
 
+.first-last-name,
 .city-province-postal,
 .street-unit,
 .dob-phone,
 .house-member {
 	display: flex;
-	gap: 10px;
+	gap: 25px;
 }
 
+.first-last-name,
 .city-province-postal input,
 .street-unit input,
 .dob-phone input,
@@ -149,6 +164,18 @@ input[type="date"]::-webkit-calendar-picker-indicator {
 	background-color: #2d3e50;
 	color: white;
   }
+
+  .login-form-section h2 {
+	padding-top: 2rem;
+	padding-bottom: 2rem;
+	text-align: center;
+  }
+
+  .login-form-section input[type='password'], 
+  .login-form-section input[type='email'] {
+	background-color: #2d3e50;
+	color: white;
+  }
   
   h2 {
 	font-size: 1.5rem;
@@ -170,12 +197,18 @@ input[type="date"]::-webkit-calendar-picker-indicator {
   }
   
   .error-message {
-	color: red;
-	font-size: 0.8rem;
-  }
+	position: absolute;
+	bottom: -20px;
+	left: 0;
+	color: rgb(199, 1, 1);
+	font-size: 13px;
+	font-weight: bold;
+	white-space: nowrap;
+}
   
   .submit-button {
 	width: 100%;
+	margin-top: 15px;
 	padding: 0.75rem;
 	background-color: #28a745;
 	color: white;
@@ -187,15 +220,26 @@ input[type="date"]::-webkit-calendar-picker-indicator {
   .signup-section {
 	flex: 1;
 	padding: 2rem;
+	padding-top: 5rem;
 	background-color: rgba(1, 194, 11, 0.719);
+	font-weight: bold;
 	color: white;
 	text-align: center;
   }
+
+  .signup-section h2 {
+	flex: 1;
+	padding: 2rem;
+	text-align: center;
+  }
+  
   
   .signup-button {
 	margin-top: 1rem;
 	padding: 0.75rem;
-	background-color: #0f172a;
+	padding-left: 7rem;
+	padding-right: 7rem;
+	background-color: #2C5475;
 	color: white;
 	border: none;
 	border-radius: 5px;
