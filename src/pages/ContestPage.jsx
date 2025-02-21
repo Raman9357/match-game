@@ -57,9 +57,9 @@ function ContestPage() {
 
                 <div className="instruction-list">
                     <ul>
-                        <li>Flip cards to <span className="hypatia-italic">Match Pairs</span></li>
-                        <li>Don’t let the <span className="hypatia-italic">Timer</span> run out</li>
-                        <li><span className="hypatia-italic">Win</span> Big prizes!</li>
+                        <li>Flip cards to <span className="hypatia-italic sky-blue">Match Pairs</span></li>
+                        <li>Don’t let the <span className="hypatia-italic red">Timer</span> run out</li>
+                        <li><span className="hypatia-italic green">Win</span> Big prizes!</li>
                     </ul>
                 </div>
 
