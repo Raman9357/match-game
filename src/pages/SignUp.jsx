@@ -321,17 +321,19 @@ function SignUp() {
                         </div>
         
                         <div className="income-container">
-                            <label className="income-label">*Gross Income:
-                                <input 
-                                    type="number" 
+                            <label>*HM's Income:
+                            <select 
                                     name="income" 
                                     value={formData.income} 
                                     onChange={handleChange} 
-                                    className={`income-input ${formErrors.income ? "error" : ""}`} 
-                                    min="0" 
-                                    step="1000" 
-                                    placeholder="-$20,000" 
-                                />
+                                    className={formErrors.income ? "error" : ""}
+                                >
+                                    <option value="">Select</option>
+                                    {["Below $20,000","$20,000-$39,999", "$40,000-$59,999", "$60,000-$79,999", "$80,000-$99,999", "$100,000-$149,999", "$150,000-$199,999", "Above $200,000"]
+                                        .map((income) => (
+                                            <option key={income} value={income}>{income}</option>
+                                        ))}
+                                </select>
                                 {formErrors.income && <span className="error-message">{formErrors.income}</span>}
                             </label>
                         </div>

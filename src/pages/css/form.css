@@ -61,9 +61,22 @@
 .form-container input[type='tel'],
 .form-container input[type='password'],
 .form-container input[type='date'],
-.form-container input[type='number'],
 .form-container select {
 	width: 100%;
+	padding: 10px;
+	margin-top: 4px;
+	border: 1px solid #ccc;
+	border-radius: 10px;
+	font-size: 16px;
+	font-family: Arial, sans-serif;
+	background-color: rgba(255, 255, 255, 0.95);
+	color: #333;
+	box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+	transition: all 0.3s ease;
+}
+
+.form-container input[type='number'] {
+	width: 39%;
 	padding: 10px;
 	margin-top: 4px;
 	border: 1px solid #ccc;
@@ -123,8 +136,7 @@
 .first-last-name,
 .city-province-postal,
 .street-unit,
-.dob-phone,
-.house-member {
+.dob-phone {
 	display: flex;
 	gap: 25px;
 }
@@ -133,6 +145,15 @@
 .city-province-postal input,
 .street-unit input,
 .dob-phone input,
+.house-member input {
+	width: 100%;
+}
+
+.house-member {
+	display: flex;
+	gap: 1px;
+}
+
 .house-member input {
 	width: 100%;
 }
@@ -149,7 +170,7 @@ input[type="date"]::-webkit-calendar-picker-indicator {
   }
   
   .login-container {
-	margin-top: 15rem;
+	margin-top: 4rem;
 	margin-bottom: 14rem;
 	display: flex;
 	width: 60%;
