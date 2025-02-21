@@ -316,7 +316,7 @@ input[type="date"]::-webkit-calendar-picker-indicator {
 	}
 
 	.login-container {
-        width: 100%;
+        width: 95%;
         margin-top: 2rem;
         margin-bottom: 5rem;
     }
@@ -334,13 +334,8 @@ input[type="date"]::-webkit-calendar-picker-indicator {
 
     .submit-button,
     .signup-button {
-        padding: 1rem;
-        font-size: 1rem;
-    }
-
-    .signup-button {
-        padding-left: 5rem;
-        padding-right: 5rem;
+        padding: 0.5rem;
+        font-size: 2rem;
     }
 
 	.form-container label {
